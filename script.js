@@ -1,6 +1,6 @@
 (function() {
   "use strict";
-
+    
   /**
    * Easy selector helper function
    */
@@ -153,97 +153,48 @@
   });
 
   /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
    * Portfolio filtering
    */
-  document.addEventListener("DOMContentLoaded", function() {
-    const filters = document.querySelectorAll('#portfolio-flters li');
-    const items = document.querySelectorAll('.portfolio-item');
-  
-    filters.forEach(filter => {
-      filter.addEventListener('click', function() {
-        // Remove active class from all filters
-        filters.forEach(f => f.classList.remove('filter-active'));
-        // Add active class to the clicked filter
-        this.classList.add('filter-active');
-  
-        const filterValue = this.getAttribute('data-filter');
-  
-        items.forEach(item => {
-          // If the filter is '*' or item matches the filter class
-          if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
-            item.classList.remove('hide');
-            item.classList.add('show');
-          } else {
-            item.classList.remove('show');
-            item.classList.add('hide');
-          }
-        });
+  // โค้ด JavaScript
+  function filterSelection(category) {
+    console.log('Filtering category: ', category);
+    var items = document.querySelectorAll('.portfolio-item');
+
+    if (category === 'all') {
+      items.forEach(item => {
+        item.classList.add('show');
       });
-    });
-  });
-
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+    } else {
+      items.forEach(item => {
+        item.classList.remove('show');
+        if (item.classList.contains(category)) {
+          item.classList.add('show');
+        }
+      });
     }
-  });
+  }
 
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
+  // เรียกใช้ฟังก์ชันเมื่อโหลดหน้าเสร็จ
+  window.onload = function() {
+    filterSelection('all');
+  };
 
+  window.filterSelection = function(category) {
+    console.log('Filtering category: ', category);
+    var items = document.querySelectorAll('.portfolio-item');
+    
+    if (category === 'all') {
+      items.forEach(item => {
+        item.classList.add('show');
+      });
+    } else {
+      items.forEach(item => {
+        item.classList.remove('show');
+        if (item.classList.contains(category)) {
+          item.classList.add('show');
+        }
+      });
+    }
+  };
+  
 })();

@@ -15,17 +15,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Satisfy" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Link to CSS and JS File -->
+  <!-- Link to CSS File -->
   <link href="style.css" rel="stylesheet">
-  <script src="script.js"></script>
-
+  
   <!-- =======================================================
   * Template Name: Laura
   * Updated: Mar 12 2024 with Bootstrap v5.3.3
@@ -130,7 +122,7 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-6">
+          <div>
             <h3 class="resume-title">Summary</h3>
             <div class="resume-item pb-0">  <!-- Summary -->
               <h4>Contact</h4>
@@ -176,7 +168,10 @@
               <h4>Tempurature-responsive Fan</h4>
               <h5>C++</h5> <h5>Arduino</h5>
               <p><em>The system automatically turns the fan on when the temputature reach 20°C. It includes a manual override button, allowing users to turn the fan off when desired. </em></p>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/wa6iDopSf8c?si=qOy7wOqUJs5u6LJe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <a href="https://youtu.be/wa6iDopSf8c" target="_blank">
+                <img src="image/link1.jpg" alt="YouTube Video 1" class="pic">
+              </a>
+              <p class="def">Click on the picture to see how to use it.</p>
               <p class="work-process">Working process</p>
               <ul> 
                 <li>Started learning how to use an Arduino ESP32 and a DHT11 sensor to create a simple system that responds to temperature changes.</li> 
@@ -190,7 +185,10 @@
               <h4>IELTS Speaking Preparation Chatbot</h4>
               <h5>Python</h5>
               <p><em>Inspired by my own IELTS speaking score of 4.5, I developed a chatbot in Python that retrieves questions from the internet and speaks them using gTTS. Through consistent practice with this chatbot, I was able to improve my IELTS speaking score to 5.0. This allows for more realistic practice sessions.</em></p>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/FtkWxoqJQOQ?si=ObNiRiaKHBvwQbT7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <a href="https://youtu.be/FtkWxoqJQOQ" target="_blank">
+                <img src="image/link2.png" alt="YouTube Video 2" class="pic">
+              </a>
+              <p class="def">Click on the picture to see how to use it.</p>              
               <p class="work-process">Working process</p>
               <ul> 
                 <li>Started learning Python to build a chatbot that could help with my IELTS speaking practice when I didn't have a partner to practice with.</li> 
@@ -213,16 +211,18 @@
           <span>My Portfolio</span>
         </div>
 
-        <ul id="portfolio-flters" class="d-flex justify-content-center">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-pictures">Pictures</li>
-          <li data-filter=".filter-certificates">Certificates</li>
-        </ul>
-
+        <div id="portfolio-filters" class="d-flex justify-content-center">
+          <ul class="filter-list">
+            <li class="filter active" onclick="filterSelection('all')">All</li>
+            <li class="filter" onclick="filterSelection('filter-pictures')">Pictures</li>
+            <li class="filter" onclick="filterSelection('filter-certificates')">Certificates</li>
+          </ul>
+        </div>        
+        
         <div class="row portfolio-container">
 
           <div class="portfolio-item filter-pictures">
-            <div class="portfolio-item"><img src="image/port1.jpg" class="img-fluid" alt="Humidity and Temperature Detector"></div>
+            <img src="image/port1.png" class="img-fluid" alt="Humidity and Temperature Detector">
             <div class="portfolio-info">
               <h4>Arduino IOT Bootcamp by Devcommu</h4>
               <p>Humidity and Temperature Detector</p>
@@ -230,7 +230,7 @@
           </div>
 
           <div class="portfolio-item filter-pictures">
-            <div class="portfolio-item"><img src="image/port2.PNG" class="img-fluid" alt="Python AI Chatbot"></div>
+            <img src="image/port2.PNG" class="img-fluid" alt="Python AI Chatbot">
             <div class="portfolio-info">
               <h4>Ultimate Python For AI by Pycode</h4>
               <p>Python AI Chatbot</p>
@@ -238,7 +238,7 @@
           </div>
 
           <div class="portfolio-item filter-pictures">
-            <div class="portfolio-item"><img src="image/port3.png" class="img-fluid" alt="Step to Data Scince"></div>
+            <img src="image/port3.png" class="img-fluid" alt="Step to Data Scince">
             <div class="portfolio-info">
               <h4>Step to Data Scince - ก้าวแรกสู่สายงานวิทยาการข้อมูล by Nangdev</h4>
               <p>Data Visualization in Google Colab</p>
@@ -246,7 +246,7 @@
           </div>
 
           <div class="portfolio-item filter-pictures">
-            <div class="portfolio-item"><img src="image/port4.PNG" class="img-fluid" alt="Blocky Game"></div>
+            <img src="image/port4.PNG" class="img-fluid" alt="Blocky Game">
             <div class="portfolio-info">
               <h4>BLocky Game ตอน รามเกียรติ์ by Coding Thailand</h4>
               <p>Coding Logic Practice</p>
@@ -254,7 +254,7 @@
           </div>
 
           <div class="portfolio-item filter-certificates">
-            <div class="portfolio-item"><img src="image/cer1.png" class="img-fluid" alt="Cula MOOC Certificate"></div>
+            <img src="image/cer1.png" class="img-fluid" alt="Cula MOOC Certificate">
             <div class="portfolio-info">
               <h4>The Open Online Non-credit Course Solving Everyday Life Problems with Computational Thinking</h4>
               <p>Chula MOOC</p>
@@ -262,7 +262,7 @@
           </div>
 
           <div class="portfolio-item filter-certificates">
-            <div class="portfolio-item"><img src="image/cer2.jpg" class="img-fluid" alt="NAT Bronze Medal (Provincial Section)"></div>
+            <img src="image/cer2.jpg" class="img-fluid" alt="NAT Bronze Medal (Provincial Section)">
             <div class="portfolio-info">
               <h4>Bronze Medal Certificate in English - Upper Secondary Level (Provincial Section) 2023</h4>
               <p>National Academic Test (NAT)</p>
@@ -270,7 +270,7 @@
           </div>
 
           <div class="portfolio-item filter-certificates">
-            <div class="portfolio-item"><img src="image/cer3.jpg" class="img-fluid" alt="Academic Excellence 2022"></div>
+            <img src="image/cer3.png" class="img-fluid" alt="Academic Excellence 2022">
             <div class="portfolio-info">
               <h4>Academic Excellence 2022</h4>
               <p>Suksanari School</p>
@@ -278,7 +278,7 @@
           </div>
 
           <div class="portfolio-item filter-certificates">
-            <div class="portfolio-item"><img src="image/cer4.jpg" class="img-fluid" alt="Exemplary Conduct 2023"></div>
+            <img src="image/cer4.png" class="img-fluid" alt="Exemplary Conduct 2023">
             <div class="portfolio-info">
               <h4>Exemplary Conduct 2023</h4>
               <p>Suksanari School</p>
@@ -309,17 +309,8 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <!-- Vendor JS Files -->
-
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- Link to JS File -->
+  <script src="script.js"></script>
 </body>
 
 </html>
